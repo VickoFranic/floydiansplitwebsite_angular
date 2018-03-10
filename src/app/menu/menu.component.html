@@ -1,14 +1,28 @@
-<nav>
-  <ul>
-    <li><a routerLink="/">Početna</a></li>
-    <li><a routerLink="/bend">Bend</a></li>
-    <li><a routerLink="/koncerti">Koncerti</a></li>
-    <li><a routerLink="/audio">Audio</a></li>
-    <li><a routerLink="/video">Video</a></li>
-    <li><a routerLink="/slike">Slike</a></li>
-    <li><a routerLink="/press-pack">Press Pack</a></li>
-    <li><a routerLink="/backline">Backline</a></li>
-    <li><a routerLink="/stage-plan">Stage Plan</a></li>
-    <li><a routerLink="/kontakt-booking">Kontakt/Booking</a></li>
-  </ul>
-</nav>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="btn-group">
+      <button class="btn btn-info bmd-btn-fab bmd-btn-fab-sm dropdown-toggle" type="button" id="ex3" data-toggle="dropdown">
+        <i class="material-icons">more_vert</i>
+      </button>
+
+      <div class="dropdown-menu  dropdown-menu-left" aria-labelledby="ex3">
+        <a routerLink="/" class="dropdown-item" type="button">Početna</a>
+        <a routerLink="/bend" class="dropdown-item" type="button">Bend</a>
+        <a routerLink="/koncerti" class="dropdown-item" type="button">Koncerti</a>
+        <div class="dropdown-divider"></div>
+        <button type="button" class="dropdown-item disabled font-weight-bold">MATERIJALI</button>
+        <a routerLink="/audio" class="dropdown-item" type="button">Audio</a>
+        <a routerLink="/video" class="dropdown-item" type="button">Video</a>
+        <a routerLink="/slike" class="dropdown-item" type="button">Slike</a>
+        <div class="dropdown-divider"></div>
+        <button type="button" class="dropdown-item disabled font-weight-bold">DOKUMENTI</button>
+        <a routerLink="/press-pack" class="dropdown-item" type="button">Press Pack</a>
+        <a routerLink="/backline" class="dropdown-item" type="button">Backline</a>
+        <a routerLink="/stage-plan" class="dropdown-item" type="button">Stage Plan</a>
+        <div class="dropdown-divider"></div>
+        <a routerLink="/kontakt-booking" class="dropdown-item" type="button">Kontakt/Booking</a>
+      </div>
+    </div>
+  </div>
+</div>
