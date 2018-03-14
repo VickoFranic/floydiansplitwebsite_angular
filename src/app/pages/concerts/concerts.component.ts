@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FacebookEventsService } from '../../services/facebook-events.service';
+import { FacebookResponse } from '../../interfaces/facebook-response';
 
 @Component({
   selector: 'app-concerts',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConcertsComponent implements OnInit {
 
-  constructor() { }
+  eventsList: any = [];
+
+  constructor(private facebookEventsService: FacebookEventsService) { }
 
   ngOnInit() {
+    this.getEventsList();
   }
 
+  getEventsList() {
+    this.facebookEventsService.getAllEvents()
+      .subscribe((response: FacebookResponse) => { 
+        this.eventsList = response.data;
+      });
+  }
 }

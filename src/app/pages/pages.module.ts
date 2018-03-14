@@ -10,11 +10,16 @@ import { BacklineComponent } from './backline/backline.component';
 import { StagePlanComponent } from './stage-plan/stage-plan.component';
 import { ContactBookingComponent } from './contact-booking/contact-booking.component';
 import { ImagesComponent } from './images/images.component';
+import { RecordSpinnerComponent } from './landing-page/record-spinner/record-spinner.component';
+import { FacebookEventsService } from '../services/facebook-events.service';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [LandingPageComponent, BandComponent, ConcertsComponent, AudioComponent, VideoComponent, PressPackComponent, BacklineComponent, StagePlanComponent, ContactBookingComponent, ImagesComponent]
+  declarations: [LandingPageComponent, BandComponent, ConcertsComponent, AudioComponent, VideoComponent, PressPackComponent, BacklineComponent, StagePlanComponent, ContactBookingComponent, ImagesComponent, RecordSpinnerComponent],
+  providers: [
+    FacebookEventsService
+  ]
 })
 export class PagesModule { }

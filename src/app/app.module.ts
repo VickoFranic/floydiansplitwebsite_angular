@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+import { registerLocaleData } from '@angular/common';
+import localeHr from '@angular/common/locales/hr';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -16,6 +19,8 @@ import { PressPackComponent } from './pages/press-pack/press-pack.component';
 import { BacklineComponent } from './pages/backline/backline.component';
 import { StagePlanComponent } from './pages/stage-plan/stage-plan.component';
 import { ContactBookingComponent } from './pages/contact-booking/contact-booking.component';
+
+registerLocaleData(localeHr, 'hr');
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -44,7 +49,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    PagesModule
+    PagesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

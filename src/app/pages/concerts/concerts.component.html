@@ -1,1 +1,45 @@
-Facebook event feed, koristenje API-ja 
+<p class="display-4">NADOLAZEĆI KONCERTI</p>
+
+<ul class="event-list">
+    <li *ngFor="let event of eventsList | filter: { start_time: today }" class="animated fadeInLeft">
+        <time>
+            <span class="day">{{ event.start_time|date: 'd' }}</span>
+            <span class="month">{{ event.start_time|date: 'LLL':'':'hr' }}</span>
+            <span class="year">{{ event.start_time|date: 'yyyy':'':'hr' }}</span>
+            <span class="time">ALL DAY</span>
+        </time>
+        <div class="info">                        
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="title">{{ event.name }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" *ngIf="event.place"><h4>{{ event.place.name }}</h4></div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<p class="display-4">PROŠLI KONCERTI</p>
+
+<ul class="event-list">
+    <li *ngFor="let event of eventsList" class="animated fadeInRight">
+        <time>
+            <span class="day">{{ event.start_time|date: 'd' }}</span>
+            <span class="month">{{ event.start_time|date: 'LLL':'':'hr' }}</span>
+            <span class="year">{{ event.start_time|date: 'yyyy':'':'hr' }}</span>
+            <span class="time">ALL DAY</span>
+        </time>
+        <div class="info">                        
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="title">{{ event.name }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" *ngIf="event.place"><h4>{{ event.place.name }}</h4></div>
+            </div>
+        </div>
+    </li>
+</ul>

@@ -1,3 +1,7 @@
 .dropdown-item {
     -webkit-appearance: none;
 }
+
+.page-title {
+    margin-top: -45px;
+}
