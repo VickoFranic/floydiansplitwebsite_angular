@@ -9,7 +9,8 @@ import { FacebookResponse } from '../../interfaces/facebook-response';
 })
 export class ConcertsComponent implements OnInit {
 
-  eventsList: any = [];
+  futureEventsList: any = [];
+  pastEventsList: any = [];
 
   constructor(private facebookEventsService: FacebookEventsService) { }
 
@@ -20,7 +21,14 @@ export class ConcertsComponent implements OnInit {
   getEventsList() {
     this.facebookEventsService.getAllEvents()
       .subscribe((response: FacebookResponse) => { 
-        this.eventsList = response.data;
+        (response.data).forEach(event => {
+          if (new Date(event.start_time) > new Date()) {
+            this.futureEventsList.push(event);
+          }
+          else {
+            this.pastEventsList.push(event);
+          }
+        });
       });
   }
 }

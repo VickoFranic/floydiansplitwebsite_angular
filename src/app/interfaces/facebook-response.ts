@@ -1,4 +1,4 @@
 export interface FacebookResponse {
-    data: object,
+    data: Array<any>,
     paging: object
 }

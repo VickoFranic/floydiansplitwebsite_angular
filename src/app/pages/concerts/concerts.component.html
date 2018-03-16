@@ -1,7 +1,17 @@
 <p class="display-4">NADOLAZEĆI KONCERTI</p>
 
+<div  ng-if="! this.futureEventsList[0]" class="pb-5">
+    <p class="display-5">
+        Trenutno nema nadolazećih koncerata. Prijavi se na našu newsletter listu ako želiš prvi saznati nove termine nastupa Floydiana ;)
+    </p>
+    <br>
+    <!-- Maichimp signup form modal -->
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us17.list-manage.com","uuid":"03aef0c8bef8d6ee131389bdf","lid":"fb083b31f6"}) })</script>
+</div>
+
+
 <ul class="event-list">
-    <li *ngFor="let event of eventsList | filter: { start_time: today }" class="animated fadeInLeft">
+    <li *ngFor="let event of futureEventsList" class="animated fadeInLeft">
         <time>
             <span class="day">{{ event.start_time|date: 'd' }}</span>
             <span class="month">{{ event.start_time|date: 'LLL':'':'hr' }}</span>
@@ -24,7 +34,7 @@
 <p class="display-4">PROŠLI KONCERTI</p>
 
 <ul class="event-list">
-    <li *ngFor="let event of eventsList" class="animated fadeInRight">
+    <li *ngFor="let event of pastEventsList" class="animated fadeInLeft">
         <time>
             <span class="day">{{ event.start_time|date: 'd' }}</span>
             <span class="month">{{ event.start_time|date: 'LLL':'':'hr' }}</span>
@@ -43,3 +53,4 @@
         </div>
     </li>
 </ul>
+
