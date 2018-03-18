@@ -9,6 +9,7 @@ import { FacebookResponse } from '../../interfaces/facebook-response';
 })
 export class ConcertsComponent implements OnInit {
 
+  isLoading = true;
   futureEventsList: any = [];
   pastEventsList: any = [];
 
@@ -19,8 +20,8 @@ export class ConcertsComponent implements OnInit {
   }
 
   getEventsList() {
-    this.facebookEventsService.getAllEvents()
-      .subscribe((response: FacebookResponse) => { 
+    return this.facebookEventsService.getAllEvents()
+      .subscribe((response: FacebookResponse) => {
         (response.data).forEach(event => {
           if (new Date(event.start_time) > new Date()) {
             this.futureEventsList.push(event);
@@ -28,6 +29,7 @@ export class ConcertsComponent implements OnInit {
           else {
             this.pastEventsList.push(event);
           }
+          this.isLoading = false;
         });
       });
   }
