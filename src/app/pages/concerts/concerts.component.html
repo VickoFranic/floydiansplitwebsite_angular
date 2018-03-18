@@ -3,7 +3,7 @@
 </div>
 
 <div *ngIf="! isLoading">
-    <p class="display-4">NADOLAZEĆI KONCERTI</p>
+    <p class="display-4 animated slideInRight">NADOLAZEĆI KONCERTI</p>
 
     <div *ngIf="! this.futureEventsList[0]" class="pb-5">
         <p class="display-5">
@@ -42,9 +42,9 @@
         </li>
     </ul>
 
-    <p class="display-4">PROŠLI KONCERTI</p>
+    <p class="display-4 animated slideInRight">PROŠLI KONCERTI</p>
 
-    <ul class="event-list">
+    <ul class="event-list pt-5">
         <li *ngFor="let event of pastEventsList" class="animated fadeInLeft">
             <time>
                 <span class="day">{{ event.start_time|date: 'd' }}</span>
