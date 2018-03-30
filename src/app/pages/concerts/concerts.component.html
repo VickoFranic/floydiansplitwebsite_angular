@@ -22,7 +22,7 @@
     </div>
 
     <ul class="event-list pt-5 pb-5">
-        <li *ngFor="let event of futureEventsList" class="future-event-item animated fadeInLeft" (click)="showDetails(event)">
+        <li *ngFor="let event of futureEventsList" class="event-item animated fadeInLeft" (click)="showDetails(event)">
             <time>
                 <span class="day">{{ event.start_time|date: 'd' }}</span>
                 <span class="month">{{ event.start_time|date: 'LLL':'':'hr' }}</span>
@@ -45,7 +45,7 @@
     <p class="display-4 animated slideInRight">PROŠLI KONCERTI</p>
 
     <ul class="event-list pt-5">
-        <li *ngFor="let event of pastEventsList" class="animated fadeInLeft">
+        <li *ngFor="let event of pastEventsList" class="event-item animated fadeInLeft" (click)="showDetails(event)">
             <time>
                 <span class="day">{{ event.start_time|date: 'd' }}</span>
                 <span class="month">{{ event.start_time|date: 'LLL':'':'hr' }}</span>

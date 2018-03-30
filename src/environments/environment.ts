@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://api.floydiansplit.com/api'
+  apiUrl: 'http://localhost:8000/api'
 };

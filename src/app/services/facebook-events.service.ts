@@ -10,4 +10,8 @@ export class FacebookEventsService {
   getAllEvents() {
     return this.http.get(environment.apiUrl + '/facebook/events');
   }
+
+  getEventDetails(id: string) {
+    return this.http.get(environment.apiUrl + '/facebook/events/' + id);
+  }
 }
