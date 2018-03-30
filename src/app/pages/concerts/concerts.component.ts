@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FacebookEventsService } from '../../services/facebook-events.service';
 import { FacebookResponse } from '../../interfaces/facebook-response';
+declare var $;
 
 @Component({
   selector: 'app-concerts',
@@ -12,6 +13,7 @@ export class ConcertsComponent implements OnInit {
   isLoading = true;
   futureEventsList: any = [];
   pastEventsList: any = [];
+  selectedEvent: Object = null;
 
   constructor(private facebookEventsService: FacebookEventsService) { }
 
@@ -32,5 +34,10 @@ export class ConcertsComponent implements OnInit {
           this.isLoading = false;
         });
       });
+  }
+
+  showDetails(event) {
+    this.selectedEvent = event;
+    $('#concertDetails').modal('show');
   }
 }

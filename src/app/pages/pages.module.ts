@@ -13,12 +13,27 @@ import { ImagesComponent } from './images/images.component';
 import { RecordSpinnerComponent } from './landing-page/record-spinner/record-spinner.component';
 import { FacebookEventsService } from '../services/facebook-events.service';
 import { LoaderComponent } from '../common/loader/loader.component';
+import { ConcertDetailsModalComponent } from './concerts/concert-details-modal/concert-details-modal.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [LandingPageComponent, BandComponent, ConcertsComponent, AudioComponent, VideoComponent, PressPackComponent, BacklineComponent, StagePlanComponent, ContactBookingComponent, ImagesComponent, RecordSpinnerComponent, LoaderComponent],
+  declarations: [
+    LandingPageComponent,
+    BandComponent,
+    ConcertsComponent,
+    AudioComponent,
+    VideoComponent,
+    PressPackComponent,
+    BacklineComponent,
+    StagePlanComponent,
+    ContactBookingComponent,
+    ImagesComponent,
+    RecordSpinnerComponent,
+    LoaderComponent,
+    ConcertDetailsModalComponent
+  ],
   providers: [
     FacebookEventsService
   ]

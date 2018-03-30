@@ -105,6 +105,10 @@ h2{
     color: rgb(30, 30, 30);
     background-color: rgb(200, 200, 200);
 }
+.future-event-item:hover {
+    color: rgb(75, 110, 168);
+    cursor: pointer;
+}
 .facebook a,
 .twitter a,
 .google-plus a {

@@ -22,14 +22,14 @@
     </div>
 
     <ul class="event-list pt-5 pb-5">
-        <li *ngFor="let event of futureEventsList" class="animated fadeInLeft">
+        <li *ngFor="let event of futureEventsList" class="future-event-item animated fadeInLeft" (click)="showDetails(event)">
             <time>
                 <span class="day">{{ event.start_time|date: 'd' }}</span>
                 <span class="month">{{ event.start_time|date: 'LLL':'':'hr' }}</span>
                 <span class="year">{{ event.start_time|date: 'yyyy':'':'hr' }}</span>
                 <span class="time">ALL DAY</span>
             </time>
-            <div class="info">                        
+            <div class="info text-center">                        
                 <div class="row">
                     <div class="col-sm-12">
                         <h2 class="title">{{ event.name }}</h2>
@@ -52,7 +52,7 @@
                 <span class="year">{{ event.start_time|date: 'yyyy':'':'hr' }}</span>
                 <span class="time">ALL DAY</span>
             </time>
-            <div class="info">                        
+            <div class="info text-center">                        
                 <div class="row">
                     <div class="col-sm-12">
                         <h2 class="title">{{ event.name }}</h2>
@@ -64,4 +64,8 @@
             </div>
         </li>
     </ul>
+
+    <app-concert-details-modal [event]="selectedEvent"></app-concert-details-modal>
+
 </div>
+
