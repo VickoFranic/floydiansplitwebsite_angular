@@ -1,6 +1,6 @@
 # Floydian Split - Angular rewrite
 
-Creating website for my band [Floydian Split]("https://floydiansplit.com"), using Angular 2 + Symfony Flex on backend.
+Creating website for my band [Floydian Split](https://floydiansplit.com), using Angular 2 + Symfony Flex on backend.
 
 Additionally, using Facebook Graph for fetching band page data (events, pictures, info etc.)
 
