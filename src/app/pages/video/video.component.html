@@ -12,8 +12,7 @@
                 
                 <label class="pt-2 description"><small>{{ video.description }}</small></label>
 
-                <h6 class="small pt-2" *ngFor="let link of video.links">
-                    
+                <h6 class="small pt-2 link" *ngFor="let link of video.links">
                     <a href="{{ link }}" target="_blank" class="text-info">
                         <i class="material-icons text-success">link</i>
                         <br>

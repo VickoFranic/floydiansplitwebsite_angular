@@ -19,7 +19,6 @@ export class VideoComponent implements OnInit {
   }
 
   showVideo(video) {
-    console.log(video);
     this.selectedVideo = video;
   }
 
