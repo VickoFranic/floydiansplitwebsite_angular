@@ -1,4 +1,5 @@
 <div class="row">
+
     <div class="col-xs-12 col-md-4 col-lg-3">
         <ul class="list-group">
             <li SimpleSmoothScroll 
@@ -24,15 +25,13 @@
     </div>
 
     <div class="col-xs-12 col-md-8 col-lg-9">
-
         <div *ngIf="! selectedVideo" class="text-center">
                 <h5 class="pt-5">KOJA TE NAŠA IZVEDBA INTERESIRA ?</h5>
                 <h6 class="pb-5">(IZABERI VIDEO IZ LISTE)</h6>
-
                 <i class="material-icons no-video-selected-icon">airplay</i>
         </div>
 
-        <div class="embed-responsive embed-responsive-16by9" *ngIf="selectedVideo" id="video-container1">
+        <div class="embed-responsive embed-responsive-16by9" *ngIf="selectedVideo">
             <iframe width="560" height="315" [src]="sanitazer.bypassSecurityTrustResourceUrl(selectedVideo.url)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
     </div>
