@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VIDEO_LIST } from './video-list';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-video',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoComponent implements OnInit {
 
-  constructor() { }
+  videos: any;
+  selectedVideo: any;
+
+  constructor(public sanitazer: DomSanitizer) { }
 
   ngOnInit() {
+    this.videos = VIDEO_LIST;
+  }
+
+  showVideo(video) {
+    console.log(video);
+    this.selectedVideo = video;
   }
 
 }

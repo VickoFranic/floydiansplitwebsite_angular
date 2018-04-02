@@ -1,0 +1,16 @@
+.no-video-selected-icon {
+    font-size: 5em;
+}
+
+li:hover {
+    cursor: pointer;
+    background-color: burlywood;
+}
+
+.description:hover {
+    cursor: pointer;
+}
+
+.active {
+    background-color: #3f51b5!important;
+}

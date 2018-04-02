@@ -1,1 +1,39 @@
-Youtube linkovi, neki library ili slicno
+<div class="row">
+    <div class="col-xs-12 col-md-4 col-lg-3">
+        <ul class="list-group">
+            <li 
+                *ngFor="let video of videos" 
+                (click)="showVideo(video)" 
+                [ngClass]="{'active': selectedVideo == video}"
+                class="list-group-item border-right">
+
+                <span class="lead pb-2">{{ video.title }}</span>
+                
+                <label class="pt-2 description"><small>{{ video.description }}</small></label>
+
+                <h6 class="small pt-2" *ngFor="let link of video.links">
+                    
+                    <a href="{{ link }}" target="_blank" class="text-info">
+                        <i class="material-icons text-success">link</i>
+                        <br>
+                        {{ link }}
+                    </a>
+                </h6>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-xs-12 col-md-8 col-lg-9">
+
+        <div *ngIf="! selectedVideo" class="text-center">
+                <h5 class="pt-5">KOJA TE NAŠA IZVEDBA INTERESIRA ?</h5>
+                <h6 class="pb-5">(IZABERI VIDEO IZ LISTE)</h6>
+
+                <i class="material-icons no-video-selected-icon">airplay</i>
+        </div>
+
+        <div class="embed-responsive embed-responsive-16by9" *ngIf="selectedVideo">
+            <iframe width="560" height="315" [src]="sanitazer.bypassSecurityTrustResourceUrl(selectedVideo.url)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
