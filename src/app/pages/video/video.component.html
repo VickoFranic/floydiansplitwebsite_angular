@@ -1,7 +1,8 @@
 <div class="row">
     <div class="col-xs-12 col-md-4 col-lg-3">
         <ul class="list-group">
-            <li 
+            <li SimpleSmoothScroll 
+                [scrollTo]="'video-container'" [duration]="500"
                 *ngFor="let video of videos" 
                 (click)="showVideo(video)" 
                 [ngClass]="{'active': selectedVideo == video}"
@@ -32,8 +33,10 @@
                 <i class="material-icons no-video-selected-icon">airplay</i>
         </div>
 
-        <div class="embed-responsive embed-responsive-16by9" *ngIf="selectedVideo">
+        <div class="embed-responsive embed-responsive-16by9" *ngIf="selectedVideo" id="video-container1">
             <iframe width="560" height="315" [src]="sanitazer.bypassSecurityTrustResourceUrl(selectedVideo.url)" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
     </div>
+
+    <div id="video-container"></div>
 </div>

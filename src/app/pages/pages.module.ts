@@ -14,10 +14,12 @@ import { RecordSpinnerComponent } from './landing-page/record-spinner/record-spi
 import { FacebookEventsService } from '../services/facebook-events.service';
 import { LoaderComponent } from '../common/loader/loader.component';
 import { ConcertDetailsModalComponent } from './concerts/concert-details-modal/concert-details-modal.component';
+import { SimpleSmoothScrollModule } from 'ng2-simple-smooth-scroll';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    SimpleSmoothScrollModule
   ],
   declarations: [
     LandingPageComponent,

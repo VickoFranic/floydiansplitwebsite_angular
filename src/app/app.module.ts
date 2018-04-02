@@ -19,6 +19,7 @@ import { PressPackComponent } from './pages/press-pack/press-pack.component';
 import { BacklineComponent } from './pages/backline/backline.component';
 import { StagePlanComponent } from './pages/stage-plan/stage-plan.component';
 import { ContactBookingComponent } from './pages/contact-booking/contact-booking.component';
+import { SimpleSmoothScrollModule } from 'ng2-simple-smooth-scroll';
 
 registerLocaleData(localeHr, 'hr');
 
@@ -50,7 +51,8 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     PagesModule,
-    HttpClientModule
+    HttpClientModule,
+    SimpleSmoothScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
