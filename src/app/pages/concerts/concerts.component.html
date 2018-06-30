@@ -1,71 +1,7 @@
-<div *ngIf="isLoading">
-    <app-loader></app-loader>
+<div class="center-block text-center">
+    <div class="fb-page" 
+    data-href="https://www.facebook.com/FloydianSplit/" 
+    data-tabs="events"
+    data-width="500">
+    <blockquote cite="https://www.facebook.com/FloydianSplit/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/FloydianSplit/"></a></blockquote></div>
 </div>
-
-<div *ngIf="! isLoading">
-    <p class="display-4 animated slideInRight">NADOLAZEĆI KONCERTI</p>
-
-    <div *ngIf="! this.futureEventsList[0]" class="pb-5">
-        <p class="display-5">
-            Trenutno nemamo nadolazećih koncerata. Prijavi se na našu newsletter listu ako želiš prvi saznati nove termine nastupa Floydiana ;)
-        </p>
-        <br>
-        <div id="mc_embed_signup">
-            <form action="https://floydiansplit.us17.list-manage.com/subscribe/post?u=03aef0c8bef8d6ee131389bdf&amp;id=fb083b31f6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                <input type="email" value="" name="EMAIL" class="form-control" id="mce-EMAIL" placeholder="Email..." required>
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_03aef0c8bef8d6ee131389bdf_fb083b31f6" tabindex="-1" value=""></div>
-                <br>
-                <input type="submit" value="Prijavi se" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info btn-raised">
-            </form>
-        </div>
-    </div>
-
-    <ul class="event-list pt-5 pb-5">
-        <li *ngFor="let event of futureEventsList" class="event-item animated fadeInLeft" (click)="showDetails(event)">
-            <time>
-                <span class="day">{{ event.start_time|date: 'd' }}</span>
-                <span class="month">{{ event.start_time|date: 'LLL':'':'hr' }}</span>
-                <span class="year">{{ event.start_time|date: 'yyyy':'':'hr' }}</span>
-                <span class="time">ALL DAY</span>
-            </time>
-            <div class="info text-center">                        
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h2 class="title">{{ event.name }}</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12" *ngIf="event.place"><h4>{{ event.place.name }}</h4></div>
-                </div>
-            </div>
-        </li>
-    </ul>
-
-    <p class="display-4 animated slideInRight">PROŠLI KONCERTI</p>
-
-    <ul class="event-list pt-5">
-        <li *ngFor="let event of pastEventsList" class="event-item animated fadeInLeft" (click)="showDetails(event)">
-            <time>
-                <span class="day">{{ event.start_time|date: 'd' }}</span>
-                <span class="month">{{ event.start_time|date: 'LLL':'':'hr' }}</span>
-                <span class="year">{{ event.start_time|date: 'yyyy':'':'hr' }}</span>
-                <span class="time">ALL DAY</span>
-            </time>
-            <div class="info text-center">                        
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h2 class="title">{{ event.name }}</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12" *ngIf="event.place"><h4>{{ event.place.name }}</h4></div>
-                </div>
-            </div>
-        </li>
-    </ul>
-
-    <app-concert-details-modal [event]="selectedEvent"></app-concert-details-modal>
-
-</div>
-

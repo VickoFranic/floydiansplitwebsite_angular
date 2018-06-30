@@ -18,7 +18,7 @@ export class ConcertsComponent implements OnInit {
   constructor(private facebookEventsService: FacebookEventsService) { }
 
   ngOnInit() {
-    this.getEventsList();
+    // this.getEventsList();
   }
 
   getEventsList() {

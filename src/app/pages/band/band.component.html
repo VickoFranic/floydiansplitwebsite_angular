@@ -4,11 +4,13 @@
             <img class="card-img-top" src="{{ member.avatar }}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{ member.first_name }} {{ member.last_name }}</h5>
-                <p class="card-text">{{ member.description }}</p>
+                <hr>
+                <h6 class="lead">{{ member.instruments }}</h6>
+                <!-- <p class="card-text">{{ member.description }}</p> -->
             </div>
-            <div class="card-footer">
-                <small class="text-muted">{{ member.instruments }}</small>
-            </div>
+            <!-- <div class="card-footer">
+                
+            </div> -->
         </div>
     </div>
 </div>
